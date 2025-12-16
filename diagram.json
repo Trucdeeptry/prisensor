@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir", "top": -80, "left": -160, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": -118.8,
+      "left": -44.2,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "pir:VCC", "nano:5V", "red", [] ],
+    [ "pir:GND", "nano:GND.1", "black", [] ],
+    [ "pir:OUT", "nano:D2", "green", [] ],
+    [ "led:A", "nano:D8", "green", [] ],
+    [ "led:C", "nano:GND.2", "black", [] ],
+    [ "led:A", "nano:8", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
